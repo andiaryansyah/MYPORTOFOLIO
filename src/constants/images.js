@@ -30,6 +30,7 @@ import project03 from '../assets/project03.png';
 import project04 from '../assets/project04.png';
 
 import profile from '../assets/profile.png';
+import profile01 from '../assets/profile01.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
 import logo02 from '../assets/logo02.png';
@@ -73,6 +74,7 @@ export default {
   project03,
   project04,
   profile,
+  profile01,
   circle,
   logo,
   logo02,
