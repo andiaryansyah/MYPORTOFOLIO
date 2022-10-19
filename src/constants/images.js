@@ -1,4 +1,5 @@
 import email from '../assets/email.png';
+import gmail from '../assets/gmail.png';
 import mobile from '../assets/mobile.png';
 import api from '../assets/api.png';
 import cpp from '../assets/cpp.png';
@@ -23,9 +24,15 @@ import about02 from '../assets/about02.png';
 import about03 from '../assets/about03.png';
 import about04 from '../assets/about04.png';
 
+import project01 from '../assets/project01.png';
+import project02 from '../assets/project02.png';
+import project03 from '../assets/project03.png';
+import project04 from '../assets/project04.png';
+
 import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
+import logo02 from '../assets/logo02.png';
 
 import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
@@ -38,6 +45,7 @@ import spotify from '../assets/spotify.png';
  // eslint-disable-next-line
 export default {
   email,
+  gmail,
   mobile,
   api,
   cpp,
@@ -60,9 +68,14 @@ export default {
   about02,
   about03,
   about04,
+  project01,
+  project02,
+  project03,
+  project04,
   profile,
   circle,
   logo,
+  logo02,
   adidas,
   amazon,
   asus,

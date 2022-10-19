@@ -19,8 +19,12 @@ const Footer = () => {
     }
 
     const handleSubmit = () => {
-        setLoading(true);
+       if (name === '' || email === '') {
+        alert('Please fill your name and email !!')
+       } else {
 
+      setLoading(true);
+      
         const contact = {
           _type: 'contact',
           name:name,
@@ -33,6 +37,7 @@ const Footer = () => {
           setLoading(false);
           setIsFormSubmitted(true);
         })
+      }
     }
 
   return (
@@ -41,7 +46,7 @@ const Footer = () => {
 
         <div className="app__footer-cards">
           <div className="app__footer-card">
-              <img src={images.email} alt="email" />
+              <img src={images.gmail} alt="email" />
               <a href="mailto:aariansyah70@gmail.com" className="p-text">aariansyah70@gmail.com</a>
           </div>
 
@@ -54,10 +59,10 @@ const Footer = () => {
         {!isFormSubmitted ?
         <div className="app__footer-form app__flex">
               <div className="app__flex">
-                  <input className="p-text" type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput}/>
+                  <input className="p-text" type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} />
               </div>
               <div className="app__flex">
-                  <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput}/>
+                  <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
               </div>
               <div>
                 <textarea className="p-text" placeholder="Your Message" name="message" value={message} onChange={handleChangeInput} />
