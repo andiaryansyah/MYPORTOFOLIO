@@ -10,6 +10,29 @@ const Skills = () => {
   const [experience, setExperience] = useState([]);
   const [skills, setSkills] = useState([]);
 
+  function extractYearRange(yearRange) {
+    const matches = yearRange.match(/(\d{4})/g); // Menggunakan ekspresi reguler untuk mengekstrak tahun
+    if (matches && matches.length === 2) {
+      return matches.map(year => parseInt(year)); // Mengonversi string tahun menjadi angka
+    }
+    return [0, 0]; // Mengembalikan nilai default jika format tidak sesuai
+  }
+  
+  // Mengurutkan data berdasarkan tahun
+  const newExperience = experience.sort((a, b) => {
+    const [startYearA, endYearA] = extractYearRange(a.year);
+    const [startYearB, endYearB] = extractYearRange(b.year);
+  
+    // Bandingkan tahun mulai (startYear), dan jika sama, bandingkan tahun berakhir (endYear)
+    if (startYearA !== startYearB) {
+      return startYearA - startYearB;
+    } else {
+      return endYearA - endYearB;
+    }
+  });
+
+  console.log("New Experience : ",newExperience)
+
   useEffect(() => {
     const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
@@ -47,7 +70,7 @@ const Skills = () => {
           ))}
         </motion.div>
         <motion.div className="app__skills-exp">
-          {experience?.map((experience) => (
+          {newExperience?.map((experience) => (
             <motion.div className="app__skills-exp-item" key={experience.year}>
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
